@@ -45,7 +45,7 @@ fun CryptoListScreen(
     viewModel: CryptoListViewModel = hiltViewModel()
 ) {
     Surface(
-        color = MaterialTheme.colorScheme.secondary,
+        color = Color.Black,
         modifier = Modifier.fillMaxSize()
     ) {
         Column {
@@ -55,7 +55,7 @@ fun CryptoListScreen(
                 textAlign = TextAlign.Center,
                 fontSize = 44.sp,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
+                color = Color.White
             )
             Spacer(modifier = Modifier.height(10.dp))
             SearchBar(
@@ -131,7 +131,7 @@ fun CryptoList(
         modifier = Modifier.fillMaxSize()
     ) {
         if(isLoading) {
-            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+            CircularProgressIndicator(color = Color.Yellow)
         }
         if(errorMessage.isNotEmpty()) {
             RetryView(error = errorMessage) {
@@ -156,7 +156,7 @@ fun CryptoRow(navController: NavController,crypto: CryptoListItem) {
     Box() {}
     Column(modifier = Modifier
         .fillMaxWidth()
-        .background(color = MaterialTheme.colorScheme.secondary)
+        .background(color = Color.Black)
         .clickable {
             navController.navigate(
                 "crypto_detail_screen/${crypto.currency}/${crypto.price}"
@@ -167,12 +167,12 @@ fun CryptoRow(navController: NavController,crypto: CryptoListItem) {
             style = MaterialTheme.typography.displaySmall,
             modifier = Modifier.padding(2.dp),
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary
+            color = Color.Green
         )
         Text(text = crypto.price,
             style = MaterialTheme.typography.displayMedium,
             modifier = Modifier.padding(2.dp),
-            color = MaterialTheme.colorScheme.primaryContainer
+            color = Color.White
         )
     }
 }

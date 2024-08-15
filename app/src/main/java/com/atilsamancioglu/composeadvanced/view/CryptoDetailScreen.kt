@@ -77,7 +77,7 @@ fun CryptoDetailScreen(
 
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(MaterialTheme.colorScheme.secondary),
+        .background(Color.Black),
         contentAlignment = Alignment.Center,
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -86,10 +86,10 @@ fun CryptoDetailScreen(
                 is Resource.Success -> {
                     val selectedCrypto = cryptoItem.data!![0]
                     Text(text = selectedCrypto.name,
-                        style = MaterialTheme.typography.displayMedium,
+                        style = MaterialTheme.typography.displayLarge,
                         modifier = Modifier.padding(2.dp),
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary,
+                        color = Color.White,
                         textAlign = TextAlign.Center
                     )
 
@@ -106,7 +106,7 @@ fun CryptoDetailScreen(
                         style = MaterialTheme.typography.displaySmall,
                         modifier = Modifier.padding(2.dp),
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primaryContainer,
+                        color = Color.Green,
                         textAlign = TextAlign.Center
 
                     )
