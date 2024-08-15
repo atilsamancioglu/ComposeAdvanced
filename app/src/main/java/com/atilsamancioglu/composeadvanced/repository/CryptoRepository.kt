@@ -8,7 +8,7 @@ import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
 @ActivityScoped
-class CryptoRepository@Inject private constructor(
+open class CryptoRepository@Inject constructor(
     private val api: CryptoAPI
 ) {
 
